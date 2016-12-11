@@ -148,7 +148,7 @@ void getTemperature()
   int reading = analogRead(sensorPin);
   float voltage = reading * 5.0 /1024;
   float temperatureC = (voltage - 0.5) * 100;
-  dtostrf(temperatureC, 7, 2, mydata);
+  dtostrf(temperatureC, 7, 1, mydata);
   Serial.print("Measured temperature = "); 
   Serial.print(temperatureC); 
   Serial.println(" *C");
