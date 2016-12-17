@@ -19,8 +19,11 @@
  *
  * Do not forget to define the radio type correctly in config.h.
  *
+ * TMP36 integration & modifcations: 2016-12-17 Claus Kühnel info@ckuehnel.ch
+ *
  *******************************************************************************/
 #include <stdlib.h>
+#include <string.h>
 #include <lmic.h>
 #include <hal/hal.h>
 #include <SPI.h>
@@ -47,7 +50,6 @@ void os_getDevEui (u1_t* buf) { }
 void os_getDevKey (u1_t* buf) { }
 
 static uint8_t mydata[] = "0123456789";
-//char mydata[] = "";
 static osjob_t sendjob;
 
 // Schedule TX every this many seconds (might become longer due to duty
@@ -149,6 +151,7 @@ void getTemperature()
   float voltage = reading * 5.0 /1024;
   float temperatureC = (voltage - 0.5) * 100;
   dtostrf(temperatureC, 7, 1, mydata);
+  strcat(mydata, " *C");
   Serial.print("Measured temperature = "); 
   Serial.print(temperatureC); 
   Serial.println(" *C");
