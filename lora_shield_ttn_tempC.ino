@@ -31,16 +31,16 @@
 // LoRaWAN NwkSKey, network session key
 // This is the default Semtech key, which is used by the prototype TTN
 // network initially.
-static const PROGMEM u1_t NWKSKEY[16] = { 0xEA, 0xD6, 0xB1, 0xA4, 0xD0, 0xBA, 0x8C, 0xEE, 0x84, 0x11, 0x38, 0xF6, 0xC1, 0xB7, 0xDC, 0x63 }; //{ 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C };
+static const PROGMEM u1_t NWKSKEY[16] = { 0xEA, ... ... 0xDC, 0x63 }; // Use your data from TTN
 
 // LoRaWAN AppSKey, application session key
 // This is the default Semtech key, which is used by the prototype TTN
 // network initially.
-static const u1_t PROGMEM APPSKEY[16] = { 0x1E, 0xBF, 0xD7, 0xE8, 0x3B, 0x5A, 0x0B, 0xCA, 0x84, 0x92, 0xA4, 0x18, 0x64, 0xA5, 0x67, 0xA5 }; // { 0x2B, 0x7E, 0x15, 0x16, 0x28, 0xAE, 0xD2, 0xA6, 0xAB, 0xF7, 0x15, 0x88, 0x09, 0xCF, 0x4F, 0x3C };
+static const u1_t PROGMEM APPSKEY[16] = { 0x1E, ... ... , 0xA5 }; // Use your data from TTN
 
 // LoRaWAN end-device address (DevAddr)
 // See http://thethingsnetwork.org/wiki/AddressSpace
-static const u4_t DEVADDR = 0xFB3E1760; // from TTN device registration   09984507 ; // <-- Change this address for every node!
+static const u4_t DEVADDR = 0xFBxxxx60; // from TTN device registration  // <-- Change this address for every node!
 
 // These callbacks are only used in over-the-air activation, so they are
 // left empty here (we cannot leave them out completely unless
