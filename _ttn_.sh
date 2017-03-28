@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Thingspeak
-api_key='<your api key>' // Change this
+api_key='<your api key>' // Change the API and rename to ttn.sh
 
 if [ -f "TTN" ]
 then
